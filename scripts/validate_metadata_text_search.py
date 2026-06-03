@@ -510,6 +510,64 @@ def validate_new_offense_metadata_search(records):
     print("PASS new offense metadata search")
 
 
+def validate_cloud_ioc_offense_search(records):
+    source = run_exact_field_search("source ip", records=records)
+    assert_routed_shape(source)
+    assert_condition(source["method"] == "exact_field", "Cloud IOC source IP exact search should use exact field")
+    assert_condition(source["result"]["event_count"] == len(records["events"]), "Cloud IOC source IP should cover all events")
+
+    command = run_exact_field_search("command line", records=records)
+    assert_routed_shape(command)
+    assert_condition(command["result"]["resolved_field"] == "actions.cmd_line", "Cloud IOC command line should resolve actions.cmd_line")
+    assert_condition(
+        any("kjmetb785204" in str(value) for value in command["result"]["values"]),
+        "Cloud IOC command line should expose obfuscated command arguments",
+    )
+
+    process = route_search("cmd.exe", records=records)
+    assert_routed_shape(process)
+    assert_condition(process["method"] == "bm25_metadata_text", "Cloud IOC process identifier should route to BM25")
+    assert_condition(process["result_count"] > 0, "Cloud IOC process search should return events")
+    assert_condition(process["result"]["query_type"] == "identifier_like", "cmd.exe should classify as identifier-like")
+    assert_condition("cmd.exe" in process["result"]["results"][0]["matched_identifiers"], "cmd.exe must exact-match file identifier")
+
+    ioc_name = route_search("W32.CmdObfuscatedBatchScriptExecution.ioc", records=records)
+    assert_routed_shape(ioc_name)
+    assert_condition(ioc_name["method"] == "bm25_metadata_text", "Cloud IOC name should route to BM25")
+    assert_condition(ioc_name["result_count"] > 0, "Cloud IOC name should return events")
+    assert_condition(
+        "w32.cmdobfuscatedbatchscriptexecution.ioc" in ioc_name["result"]["results"][0]["matched_identifiers"],
+        "Cloud IOC dotted name should exact-match as an identifier",
+    )
+
+    description = route_search("obfuscated batch script", records=records)
+    assert_routed_shape(description)
+    assert_condition(description["method"] == "bm25_metadata_text", "Cloud IOC description query should route to BM25")
+    assert_condition(description["result_count"] > 0, "Cloud IOC description query should return events")
+    terms = {match["matched_term"] for match in description["result"]["results"][0]["matched_terms"]}
+    assert_condition({"obfuscated", "batch", "script"} <= terms, "Cloud IOC description query should match key terms")
+
+    hash_result = route_search("BADF4752413CB0CBDC03FB95820CA167F0CDC63B597CCDB5EF43111180E088B0", records=records)
+    assert_routed_shape(hash_result)
+    assert_condition(hash_result["method"] == "bm25_metadata_text", "Cloud IOC SHA256 should route to BM25")
+    assert_condition(hash_result["result_count"] > 0, "Cloud IOC SHA256 query should return events")
+    assert_condition(
+        "badf4752413cb0cbdc03fb95820ca167f0cdc63b597ccdb5ef43111180e088b0"
+        in hash_result["result"]["results"][0]["matched_identifiers"],
+        "Cloud IOC SHA256 must exact-match hash identifier",
+    )
+
+    exact_ip = route_search("10.147.8.91", records=records)
+    assert_routed_shape(exact_ip)
+    assert_condition(exact_ip["result_count"] == 1, "Cloud IOC exact IP should return one event")
+    assert_condition(exact_ip["result"]["results"][0]["event_index"] == 0, "Cloud IOC exact IP should return event 0")
+
+    missing_ip = route_search("10.147.99.99", records=records)
+    assert_routed_shape(missing_ip)
+    assert_condition(missing_ip["result_count"] == 0, "Missing Cloud IOC IP must not match weak fragments")
+    print("PASS cloud IOC offense search")
+
+
 def validate_specific_and_cross_offense_search(legacy_records, new_records):
     legacy_id = offense_id(legacy_records)
     new_id = offense_id(new_records)
@@ -574,6 +632,12 @@ def main():
         lambda records: field_has_value(records, "cisco.detection", "Hidden User Created")
         and field_has_value(records, "registry_set.value", "CodexSandboxOnline"),
     )
+    _, cloud_ioc_records = find_records(
+        "Cloud IOC command-line data",
+        lambda records: field_has_value(records, "cisco.event_type", "Cloud IOC")
+        and field_has_value(records, "observables.file.name", "cmd.exe")
+        and field_contains_value(records, "cloud_ioc.description", "obfuscated batch script"),
+    )
 
     validate_bm25_detection_search(legacy_records)
     validate_bm25_process_identifier_search(legacy_records)
@@ -595,6 +659,7 @@ def main():
     validate_ui_mode_entry_points(legacy_records)
     validate_new_offense_exact_search(new_records)
     validate_new_offense_metadata_search(new_records)
+    validate_cloud_ioc_offense_search(cloud_ioc_records)
     validate_specific_and_cross_offense_search(legacy_records, new_records)
     validate_no_duplicate_active_dataset()
     print("PASS metadata text search validation complete")

@@ -87,6 +87,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -111,6 +112,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -119,6 +123,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1660
+        ],
+        "registry_set.puid": [
+          28
+        ],
+        "registry_set.guid": [
+          "ad3c699d-98d8-885a-b07e-fd08f5f9c1cd"
+        ],
+        "registry_set.boot_sid": [
+          "4e75873f-e104-4982-a19c-e8c5685adccc"
+        ],
+        "registry_set.ts": [
+          1779756644986848000
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -129,11 +151,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -145,7 +174,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -233,6 +264,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -257,6 +289,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -265,6 +300,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1648
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "f2e51406-c1fd-8347-b693-ae833b36c700"
+        ],
+        "registry_set.boot_sid": [
+          "e9d8bb2a-afc2-44eb-a7ec-2622186508e2"
+        ],
+        "registry_set.ts": [
+          1779754692983211900
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -275,11 +328,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -291,7 +351,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -379,6 +441,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -403,6 +466,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -411,6 +477,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1688
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "57fca688-9687-8c43-9a82-31bdfeb869e2"
+        ],
+        "registry_set.boot_sid": [
+          "1aa029c8-308e-4596-9cba-afa035b38584"
+        ],
+        "registry_set.ts": [
+          1779746065716698200
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -421,11 +505,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -437,7 +528,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -525,6 +618,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -549,6 +643,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -557,6 +654,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1812
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "f45609b9-845c-8032-ad91-9d2e61d37e73"
+        ],
+        "registry_set.boot_sid": [
+          "f94985d4-3b0e-44dc-8960-f328d1b0092d"
+        ],
+        "registry_set.ts": [
+          1779748265719394300
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -567,11 +682,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -583,7 +705,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -671,6 +795,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -695,6 +820,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -703,6 +831,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1804
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "ee5673b9-b40f-82e8-85db-ea357cc23316"
+        ],
+        "registry_set.boot_sid": [
+          "b4937e14-c1a6-4fa6-aa7f-eca4557688c7"
+        ],
+        "registry_set.ts": [
+          1779748125914184700
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -713,11 +859,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -729,7 +882,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -817,6 +972,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -841,6 +997,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -849,6 +1008,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          2072
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "68f9c687-0f21-8146-a8a6-ffbc90e9f4cb"
+        ],
+        "registry_set.boot_sid": [
+          "1f55c729-478d-4a63-9b88-dccb480f171b"
+        ],
+        "registry_set.ts": [
+          1779747893015210700
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -859,11 +1036,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -875,7 +1059,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -963,6 +1149,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -987,6 +1174,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -995,6 +1185,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          996
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "dba62568-1f15-8358-951e-d3927972c8e9"
+        ],
+        "registry_set.boot_sid": [
+          "78b247aa-32ea-41e8-9694-7d41ea15051b"
+        ],
+        "registry_set.ts": [
+          1779745269312905400
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -1005,11 +1213,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -1021,7 +1236,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -1109,6 +1326,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -1133,6 +1351,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -1141,6 +1362,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1876
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "317b447b-577c-89fe-a897-3f9df9f8f0c7"
+        ],
+        "registry_set.boot_sid": [
+          "5698ff18-cba7-41af-99c0-fea1128f52b6"
+        ],
+        "registry_set.ts": [
+          1779747351567267000
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -1151,11 +1390,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -1167,7 +1413,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -1255,6 +1503,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -1279,6 +1528,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -1287,6 +1539,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          2096
+        ],
+        "registry_set.puid": [
+          28
+        ],
+        "registry_set.guid": [
+          "aab67cde-fac7-80ef-920a-dd0653f734c4"
+        ],
+        "registry_set.boot_sid": [
+          "3d59c20a-aa3a-4693-a748-d16d50da8071"
+        ],
+        "registry_set.ts": [
+          1779744363036195600
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -1297,11 +1567,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -1313,7 +1590,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -1401,6 +1680,7 @@
         "observables.file.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [
           true
         ],
@@ -1425,6 +1705,9 @@
         "registry_set.app.sha256": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
         ],
+        "registry_set.app.size": [
+          255360
+        ],
         "registry_set.app.original_file_name": [
           "SETUPPLATFORM.EXE"
         ],
@@ -1433,6 +1716,24 @@
         ],
         "registry_set.app.original_vendor_name": [
           "Microsoft Corporation"
+        ],
+        "registry_set.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "registry_set.pid": [
+          1792
+        ],
+        "registry_set.puid": [
+          29
+        ],
+        "registry_set.guid": [
+          "b03492db-ba40-82ff-9db9-3924dd6ac10b"
+        ],
+        "registry_set.boot_sid": [
+          "d8cd7f7c-3a5e-4542-b9ef-71bdf8581ad2"
+        ],
+        "registry_set.ts": [
+          1779750495233122300
         ],
         "registry_set.key": [
           "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
@@ -1443,11 +1744,18 @@
         "registry_set.data_txt": [
           "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
         ],
+        "registry_set.data_int": [],
+        "registry_set.data_len": [
+          91
+        ],
         "registry_set.user.domain": [
           "NT AUTHORITY"
         ],
         "registry_set.user.name": [
           "SYSTEM"
+        ],
+        "registry_set.user.sid": [
+          "010100000000000512000000"
         ],
         "normalized.observables.all": [
           "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
@@ -1459,7 +1767,9 @@
           "winlogon userinit registry key modification"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "winlogon userinit registry key modification"
+        "normalized.name": "winlogon userinit registry key modification",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     }
   ]

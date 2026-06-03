@@ -63,6 +63,8 @@ data/offense_<offense_id>_events_<logsource_id>_*.json
              -> scripts/validate_metadata_text_search.py
 ```
 
+The extractor mapping supports either a single deterministic source path or an ordered list of fallback paths for a normalized field. Fallback paths let the same metadata field cover compatible Cisco Secure Endpoint payload variants, such as registry-set activity and Cloud IOC command-line alerts, while preserving the original path for existing offenses.
+
 ## Active Files
 
 - `data/event_metadata_records_<offense_id>.json`: generated Event Metadata Records discovered by filename.
@@ -76,6 +78,8 @@ data/offense_<offense_id>_events_<logsource_id>_*.json
 - `app/search_metadata_text.py`: deterministic BM25-only and fuzzy-only metadata text search.
 - `app/search_router.py`: deterministic router over exact field search, BM25 metadata text search, and fuzzy metadata text fallback.
 - `app/app.py`: Streamlit analyst interface.
+- `app/offense_inventory.py`: deterministic offense inventory builder over discovered metadata records.
+- `app/pages/1_Offenses_Inventory.py`: Streamlit Offenses Inventory page.
 - `scripts/validate_metadata_text_search.py`: deterministic validation checks.
 
 ## Usage
@@ -153,6 +157,8 @@ The UI dynamically discovers available offenses from:
 ```text
 data/event_metadata_records_<offense_id>.json
 ```
+
+The Streamlit app also includes an Offenses Inventory page that dynamically lists every discovered metadata file with its offense ID, event count, first and last event time, primary QRadar log source ID, metadata file path, and deterministically inferred raw offense file path.
 
 At the top of the UI, before the analyst query, the analyst chooses:
 

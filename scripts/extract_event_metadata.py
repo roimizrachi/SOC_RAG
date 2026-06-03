@@ -85,6 +85,27 @@ def extract_path(event, decoded_payload, path):
     return normalize_values(values, path_has_array(path))
 
 
+def has_extracted_value(value):
+    if value is None:
+        return False
+    if isinstance(value, list):
+        return bool(value)
+    return value != ""
+
+
+def extract_mapping_value(event, decoded_payload, path_spec):
+    if isinstance(path_spec, list):
+        for path in path_spec:
+            value = extract_path(event, decoded_payload, path)
+            if has_extracted_value(value):
+                return value
+        if any(path_has_array(path) for path in path_spec):
+            return []
+        return None
+
+    return extract_path(event, decoded_payload, path_spec)
+
+
 def extract_event_metadata(events, mapping, offense_id):
     documents = []
 
@@ -98,11 +119,11 @@ def extract_event_metadata(events, mapping, offense_id):
             elif path == "generated_by_pipeline":
                 event_identity[field_name] = event_index
             else:
-                event_identity[field_name] = extract_path(event, decoded_payload, path)
+                event_identity[field_name] = extract_mapping_value(event, decoded_payload, path)
 
         fields = {}
         for field_name, path in mapping.get("fields", {}).items():
-            fields[field_name] = extract_path(event, decoded_payload, path)
+            fields[field_name] = extract_mapping_value(event, decoded_payload, path)
 
         documents.append({
             "event_identity": event_identity,

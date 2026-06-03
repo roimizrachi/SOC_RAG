@@ -68,6 +68,7 @@
         "observables.file.md5": [],
         "observables.file.sha1": [],
         "observables.file.sha256": [],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [],
         "observables.file.signature.issuer": [],
         "observables.file.signature.subject": [],
@@ -141,7 +142,9 @@
           "hidden user created"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "hidden user created"
+        "normalized.name": "hidden user created",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     },
     {
@@ -210,6 +213,7 @@
         "observables.file.md5": [],
         "observables.file.sha1": [],
         "observables.file.sha256": [],
+        "observables.file.parent.sha256": null,
         "observables.file.signature.trusted": [],
         "observables.file.signature.issuer": [],
         "observables.file.signature.subject": [],
@@ -283,7 +287,9 @@
           "hidden user created"
         ],
         "normalized.severity_id": 3,
-        "normalized.name": "hidden user created"
+        "normalized.name": "hidden user created",
+        "cloud_ioc.short_description": null,
+        "cloud_ioc.description": null
       }
     }
   ]

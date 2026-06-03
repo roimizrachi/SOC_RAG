@@ -16,7 +16,10 @@
     "cisco.date": "utf8_payload.date",
     "cisco.event_type": "utf8_payload.event_type",
     "cisco.event_type_id": "utf8_payload.event_type_id",
-    "cisco.detection": "utf8_payload.detection",
+    "cisco.detection": [
+      "utf8_payload.detection",
+      "utf8_payload.cloud_ioc.short_description"
+    ],
     "cisco.severity": "utf8_payload.severity",
     "cisco.connector_guid": "utf8_payload.connector_guid",
     "cisco.group_guids": "utf8_payload.group_guids[]",
@@ -32,19 +35,41 @@
     "computer.hw_info.vendor_name": "utf8_payload.bp_data.device.hw_info.vendor_name",
     "computer.hw_info.serial_number": "utf8_payload.bp_data.device.hw_info.serial_number",
     "actions.action": "utf8_payload.bp_data.details.actions[].action",
-    "actions.name": "utf8_payload.bp_data.details.actions[].name",
-    "actions.path": "utf8_payload.bp_data.details.actions[].path",
-    "actions.cmd_line": "utf8_payload.bp_data.details.actions[].cmd_line",
-    "actions.sha256": "utf8_payload.bp_data.details.actions[].sha256",
+    "actions.name": [
+      "utf8_payload.bp_data.details.actions[].name",
+      "utf8_payload.file.file_name"
+    ],
+    "actions.path": [
+      "utf8_payload.bp_data.details.actions[].path",
+      "utf8_payload.file.file_path"
+    ],
+    "actions.cmd_line": [
+      "utf8_payload.bp_data.details.actions[].cmd_line",
+      "utf8_payload.command_line.arguments"
+    ],
+    "actions.sha256": [
+      "utf8_payload.bp_data.details.actions[].sha256",
+      "utf8_payload.file.identity.sha256"
+    ],
     "actions.pid": "utf8_payload.bp_data.details.actions[].pid",
     "actions.ppid": "utf8_payload.bp_data.details.actions[].ppid",
     "actions.status": "utf8_payload.bp_data.details.actions[].status",
     "actions.error": "utf8_payload.bp_data.details.actions[].error",
-    "observables.file.name": "utf8_payload.bp_data.observables.file[].name",
-    "observables.file.path": "utf8_payload.bp_data.observables.file[].path",
+    "observables.file.name": [
+      "utf8_payload.bp_data.observables.file[].name",
+      "utf8_payload.file.file_name"
+    ],
+    "observables.file.path": [
+      "utf8_payload.bp_data.observables.file[].path",
+      "utf8_payload.file.file_path"
+    ],
     "observables.file.md5": "utf8_payload.bp_data.observables.file[].md5",
     "observables.file.sha1": "utf8_payload.bp_data.observables.file[].sha1",
-    "observables.file.sha256": "utf8_payload.bp_data.observables.file[].sha256",
+    "observables.file.sha256": [
+      "utf8_payload.bp_data.observables.file[].sha256",
+      "utf8_payload.file.identity.sha256"
+    ],
+    "observables.file.parent.sha256": "utf8_payload.file.parent.identity.sha256",
     "observables.file.signature.trusted": "utf8_payload.bp_data.observables.file[].signature.trusted",
     "observables.file.signature.issuer": "utf8_payload.bp_data.observables.file[].signature.issuer",
     "observables.file.signature.subject": "utf8_payload.bp_data.observables.file[].signature.subject",
@@ -73,6 +98,11 @@
     "registry_set.user.sid": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.user.sid",
     "normalized.observables.all": "utf8_payload.bp_data.normalized.observables.all[]",
     "normalized.severity_id": "utf8_payload.bp_data.normalized.severity_id",
-    "normalized.name": "utf8_payload.bp_data.normalized.name"
+    "normalized.name": [
+      "utf8_payload.bp_data.normalized.name",
+      "utf8_payload.cloud_ioc.short_description"
+    ],
+    "cloud_ioc.short_description": "utf8_payload.cloud_ioc.short_description",
+    "cloud_ioc.description": "utf8_payload.cloud_ioc.description"
   }
 }

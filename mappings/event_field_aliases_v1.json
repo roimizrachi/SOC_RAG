@@ -283,6 +283,14 @@
       "malware hash",
       "indicator hash"
     ],
+    "observables.file.parent.sha256": [
+      "parent sha256",
+      "parent file sha256",
+      "parent process sha256",
+      "parent hash",
+      "parent file hash",
+      "parent process hash"
+    ],
     "observables.file.signature.trusted": [
       "signature trusted",
       "trusted signature",
@@ -452,6 +460,21 @@
       "normalized name",
       "normalized detection name",
       "normalized alert name"
+    ],
+    "cloud_ioc.short_description": [
+      "cloud ioc",
+      "cloud ioc name",
+      "cloud ioc short description",
+      "ioc short description",
+      "ioc name"
+    ],
+    "cloud_ioc.description": [
+      "cloud ioc description",
+      "ioc description",
+      "cloud ioc details",
+      "ioc details",
+      "ioc explanation",
+      "detection explanation"
     ]
   }
 }

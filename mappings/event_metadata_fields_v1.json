@@ -42,6 +42,7 @@
   "observables.file.md5": "Observed file MD5 hashes.",
   "observables.file.sha1": "Observed file SHA1 hashes.",
   "observables.file.sha256": "Observed file SHA256 hashes.",
+  "observables.file.parent.sha256": "Observed parent file or parent process SHA256 hashes.",
   "observables.file.signature.trusted": "Observed file digital-signature trust status.",
   "observables.file.signature.issuer": "Observed file certificate issuer.",
   "observables.file.signature.subject": "Observed file certificate subject.",
@@ -70,5 +71,7 @@
   "registry_set.user.sid": "User SID associated with the registry set activity.",
   "normalized.observables.all": "Flattened normalized observable values.",
   "normalized.severity_id": "Normalized severity identifier.",
-  "normalized.name": "Normalized detection name."
+  "normalized.name": "Normalized detection name.",
+  "cloud_ioc.short_description": "Cisco Cloud IOC short description or IOC name.",
+  "cloud_ioc.description": "Cisco Cloud IOC detailed description."
 }
