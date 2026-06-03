@@ -1,32 +1,51 @@
-# NEXT_PHASE
+# PHASE_1_COMPLETED
 
-## Goal
+Phase 1 has been completed.
 
-Build the first analyst-facing deterministic search application for Event Metadata Records.
+This file records the previous next phase, which delivered the first analyst-facing deterministic search application for Event Metadata Records.
 
-## Existing Files
+The real next phase is now documented in `PHASE_2_PLAN.md`.
 
-- event_metadata_records_82303.json
-- event_field_aliases_v1.json
-- resolve_query_field.py
+## Completed Goal
 
-## Files To Create
+Build a deterministic analyst search interface over Event Metadata Records for a single offense.
 
-- answer_event_question.py
-- app.py
+## Completed Scope
 
-## Requirements
+- Deterministic Event Metadata search.
+- Single-offense search over offense `82303`.
+- Event-level search only.
+- Alias-based field resolution using `event_field_aliases_v1.json`.
+- Answer workflow in `app/answer_event_question.py`.
+- Streamlit analyst interface in `app/app.py`.
+- Duplicate value removal.
+- Matching event index return.
 
-### answer_event_question.py
+## Completed Phase 1 Flow
 
-Responsibilities:
+```text
+data/event_metadata_records_82303.json
+  -> mappings/event_field_aliases_v1.json
+  -> scripts/resolve_query_field.py
+  -> app/answer_event_question.py
+  -> app/app.py
+```
 
-1. Receive analyst question.
-2. Resolve question to a metadata field using resolve_query_field.py.
-3. Load event_metadata_records_82303.json.
-4. Collect values for the resolved field.
-5. Remove duplicates.
-6. Return:
+## Completed Deliverables
+
+- `app/answer_event_question.py`
+- `app/app.py`
+
+## Completed Search Behavior
+
+`app/answer_event_question.py`:
+
+1. Receives an analyst question.
+2. Resolves the question to a metadata field using `scripts/resolve_query_field.py`.
+3. Loads `data/event_metadata_records_82303.json`.
+4. Collects values for the resolved field.
+5. Removes duplicate values.
+6. Returns:
 
 ```python
 {
@@ -38,63 +57,30 @@ Responsibilities:
 }
 ```
 
-### app.py
+`app/app.py` displays:
 
-Build a Streamlit application.
+- Question input.
+- Ask button.
+- Resolved field.
+- Values.
+- Event count.
+- Matching events table.
 
-Run:
+## Completed Validation
 
-```bash
-streamlit run app.py
-```
+- Supported example questions return results.
+- Duplicate values are removed.
+- Matching event indexes are returned.
+- Streamlit app startup was validated.
 
-UI:
+## Phase 1 Constraints Preserved
 
-- Question input
-- Ask button
-- Resolved field
-- Values
-- Event count
-- Matching events table
-
-## Supported Questions
-
-Examples:
-
-- What is the source ip?
-- What is the destination ip?
-- What is the hostname?
-- What registry key was modified?
-- What file hash was detected?
-- What is the sha256?
-- What MITRE technique was detected?
-- What tactic was detected?
-
-Use:
-
-- event_field_aliases_v1.json
-
-## Constraints
-
-Do NOT implement:
+Phase 1 did not implement:
 
 - RAG
 - Embeddings
-- Semantic Search
-- Vector Search
+- Semantic search
+- Vector search
 - OpenAI API calls
-- Multi-Offense Search
-
-## Validation
-
-Before finishing:
-
-1. Verify Streamlit starts successfully.
-2. Verify example questions return results.
-3. Verify duplicate values are removed.
-4. Verify event indexes are returned.
-
-## Deliverables
-
-- answer_event_question.py
-- app.py
+- LLM calls
+- Multi-offense search
