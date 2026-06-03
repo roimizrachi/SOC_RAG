@@ -1,19 +1,19 @@
 # NEXT_PHASE
 
-Phase 2 is complete.
+Phase 3 upload intake UI is complete.
 
-The recommended next phase is Phase 3: Deterministic Offense Profile generation.
+The recommended next phase is deterministic Offense Profile generation.
 
-Do not implement Phase 3 until explicitly approved.
+Do not implement the next phase until explicitly approved.
 
-## Recommended Phase 3 Goal
+## Recommended Next Goal
 
-Generate a deterministic Offense Profile from the existing single-offense Event Metadata Records.
+Generate a deterministic Offense Profile from discovered Event Metadata Records.
 
 ## Suggested Phase 3 Flow
 
 ```text
-data/event_metadata_records_82303.json
+data/event_metadata_records_<offense_id>.json
   -> Deterministic Offense Profile
       -> Hosts
       -> Users
@@ -27,10 +27,10 @@ data/event_metadata_records_82303.json
 
 ## Recommended Scope
 
-- Single offense only.
+- Selected offense first; all-discovered-offense profile support only if explicitly approved.
 - Deterministic only.
 - Event Metadata Records only.
-- No new offense datasets.
+- No new offense datasets unless explicitly approved.
 - No dataset regeneration unless explicitly approved.
 - Generate structured offense-level summaries from existing event fields.
 
@@ -39,7 +39,7 @@ data/event_metadata_records_82303.json
 Potential Phase 3 deliverables:
 
 - `app/offense_profile.py`
-  - Build a deterministic offense profile from `data/event_metadata_records_82303.json`.
+  - Build a deterministic offense profile from discovered Event Metadata Records.
   - Aggregate hosts, users, IPs, detections, processes, registry keys, counts, and artifacts.
 
 - `scripts/validate_offense_profile.py`
@@ -60,10 +60,10 @@ Potential Phase 3 deliverables:
 - LLM calls
 - OpenAI API calls
 - Qdrant
-- Multi-offense search
+- New search semantics
 - New offense datasets
 
-## Phase 2 Reference
+## References
 
 Phase 2 completion is documented in `PHASE_2_COMPLETED.md`.
-
+Phase 3 completion is documented in `PHASE_3_COMPLETED.md`.

@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Event Metadata Search MVP
+Event Metadata Search MVP with deterministic metadata-file discovery and Streamlit upload intake.
 
 ## Scope
 
-- Single offense only
+- Selected-offense and all-discovered-offense metadata-file search
 - Event-level search only
 - Deterministic search only
 
@@ -17,11 +17,11 @@ Event Metadata Search MVP
 - Vector Search
 - Semantic Search
 - LLM Calls
-- Multi-Offense Search
+- New non-deterministic search behavior
 
 ## Current Goal
 
-Build a deterministic analyst search router over Event Metadata Records.
+Maintain the deterministic analyst search router and Streamlit offense intake workflow over Event Metadata Records.
 
 ## Search Routing Rules
 
@@ -142,6 +142,7 @@ The UI must clearly display:
 - resolve_query_field.py
 - search_metadata_text.py
 - search_router.py
+- offense_intake.py
 
 ## Repository Rules
 

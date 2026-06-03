@@ -4,11 +4,13 @@ import streamlit as st
 
 import answer_event_question
 import metadata_records
+import offense_intake
 import search_metadata_text
 import search_router
 
 metadata_records = importlib.reload(metadata_records)
 answer_event_question = importlib.reload(answer_event_question)
+offense_intake = importlib.reload(offense_intake)
 search_metadata_text = importlib.reload(search_metadata_text)
 search_router = importlib.reload(search_router)
 
@@ -35,9 +37,90 @@ st.title("Event Metadata Search")
 if "search_requested" not in st.session_state:
     st.session_state["search_requested"] = False
 
+if "intake_report" not in st.session_state:
+    st.session_state["intake_report"] = None
+
 
 def request_search():
     st.session_state["search_requested"] = True
+
+
+def status_icon(status):
+    if status == "pass":
+        return "OK"
+    if status == "warning":
+        return "WARNING"
+    if status == "error":
+        return "ERROR"
+    return status.upper()
+
+
+def intake_check_rows(report):
+    return [
+        {
+            "status": status_icon(check["status"]),
+            "check": check["check"],
+            "detail": check["detail"],
+        }
+        for check in report.get("checks", [])
+    ]
+
+
+def render_intake_report(report):
+    if not report:
+        return
+
+    if report["status"] == "success":
+        st.success(f"Intake completed for offense {report.get('offense_id')}.")
+    else:
+        st.error("Intake did not complete.")
+
+    metric_cols = st.columns(4)
+    metric_cols[0].metric("Offense ID", report.get("offense_id") or "Unknown")
+    metric_cols[1].metric("Source events", report.get("event_count", 0))
+    metric_cols[2].metric("Discovered offenses", report.get("discovered_offense_count", 0))
+    metric_cols[3].metric("Avg non-empty fields", report.get("non_empty_field_avg") or "Unknown")
+
+    path_rows = [
+        {"path_type": "uploaded filename", "path": report.get("uploaded_filename") or "Unknown"},
+        {"path_type": "raw offense file", "path": report.get("raw_file_path") or "Not written"},
+        {"path_type": "metadata output", "path": report.get("metadata_file_path") or "Not written"},
+    ]
+    st.dataframe(path_rows, hide_index=True, width="stretch")
+
+    st.subheader("Intake checks")
+    st.dataframe(intake_check_rows(report), hide_index=True, width="stretch")
+
+    if report.get("smoke_results"):
+        st.subheader("Smoke search results")
+        st.dataframe(report["smoke_results"], hide_index=True, width="stretch")
+
+
+def render_intake_panel():
+    with st.expander("Offense Intake", expanded=False):
+        uploaded_file = st.file_uploader(
+            "Upload offense JSON",
+            type=["json"],
+            accept_multiple_files=False,
+            key="offense_intake_upload",
+        )
+        allow_overwrite = st.checkbox(
+            "Allow overwrite for an existing raw offense file or metadata output",
+            value=False,
+            key="offense_intake_allow_overwrite",
+        )
+
+        if st.button("Run intake", type="secondary", key="run_offense_intake"):
+            if uploaded_file is None:
+                st.session_state["intake_report"] = offense_intake.empty_upload_report()
+            else:
+                st.session_state["intake_report"] = offense_intake.run_offense_intake(
+                    uploaded_file.name,
+                    uploaded_file.getvalue(),
+                    allow_overwrite=allow_overwrite,
+                )
+
+        render_intake_report(st.session_state["intake_report"])
 
 
 def format_matched_terms(matches):
@@ -155,6 +238,8 @@ def render_search(selected_scope, selected_offense_id, selected_mode, query, lim
         st.subheader("Ranked events")
         render_metadata_result(result)
 
+
+render_intake_panel()
 
 available_records = discover_metadata_record_files()
 
