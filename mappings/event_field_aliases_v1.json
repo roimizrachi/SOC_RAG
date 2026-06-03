@@ -333,6 +333,12 @@
       "registry app hash",
       "application hash"
     ],
+    "registry_set.app.size": [
+      "registry app size",
+      "registry process size",
+      "application size",
+      "file size"
+    ],
     "registry_set.app.original_file_name": [
       "original file name",
       "registry original file name",
@@ -349,6 +355,39 @@
       "original vendor",
       "file vendor",
       "application vendor"
+    ],
+    "registry_set.cmd_line": [
+      "registry command line",
+      "registry cmd line",
+      "registry cmdline",
+      "registry process command line",
+      "registry execution command",
+      "command line"
+    ],
+    "registry_set.pid": [
+      "registry pid",
+      "registry process id",
+      "registry set pid"
+    ],
+    "registry_set.puid": [
+      "registry puid",
+      "registry process unique id",
+      "registry set puid"
+    ],
+    "registry_set.guid": [
+      "registry guid",
+      "registry event guid",
+      "registry activity guid"
+    ],
+    "registry_set.boot_sid": [
+      "boot sid",
+      "registry boot sid",
+      "boot session id"
+    ],
+    "registry_set.ts": [
+      "registry timestamp",
+      "registry activity timestamp",
+      "registry set time"
     ],
     "registry_set.key": [
       "modified registry key",
@@ -369,6 +408,17 @@
       "registry value data",
       "data txt"
     ],
+    "registry_set.data_int": [
+      "registry data integer",
+      "registry integer data",
+      "registry data int",
+      "registry value integer"
+    ],
+    "registry_set.data_len": [
+      "registry data length",
+      "registry value length",
+      "registry data len"
+    ],
     "registry_set.user.domain": [
       "registry user domain",
       "user domain",
@@ -379,6 +429,11 @@
       "registry user",
       "user that changed registry",
       "registry account"
+    ],
+    "registry_set.user.sid": [
+      "registry user sid",
+      "user sid",
+      "registry account sid"
     ],
     "normalized.observables.all": [
       "all observables",

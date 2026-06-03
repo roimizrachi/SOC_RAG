@@ -1,0 +1,290 @@
+{
+  "offense_id": "81048",
+  "event_count": 2,
+  "events": [
+    {
+      "event_identity": {
+        "offense_id": "81048",
+        "event_index": 0,
+        "event_id": 7636693955299508296
+      },
+      "fields": {
+        "qradar.starttime": 1778056373189,
+        "qradar.sourceip": "10.149.11.28",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-06T08:32:49+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Hidden User Created",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "39659e20-e610-4b99-acdc-08a0574ceefb",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003",
+          "TA0005"
+        ],
+        "cisco.techniques": [
+          "T1098",
+          "T1112",
+          "T1564.002"
+        ],
+        "computer.hostname": "WK-SNIRBE.OPENU.LAN",
+        "computer.external_ip": "192.114.2.46",
+        "computer.network_ips": [
+          "10.149.11.28",
+          "172.18.32.1"
+        ],
+        "computer.network_macs": [
+          "30:9c:23:2f:d7:f0",
+          "00:15:5d:d8:c8:4e"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 10 22H2",
+        "computer.os.build": "19045.3693",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC0MZSX9",
+        "actions.action": [],
+        "actions.name": [],
+        "actions.path": [],
+        "actions.cmd_line": [],
+        "actions.sha256": [],
+        "actions.pid": [],
+        "actions.ppid": [],
+        "actions.status": [],
+        "actions.error": [],
+        "observables.file.name": [
+          "codex-windows-sandbox-setup.exe"
+        ],
+        "observables.file.path": [
+          "C:\\Users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64"
+        ],
+        "observables.file.md5": [],
+        "observables.file.sha1": [],
+        "observables.file.sha256": [],
+        "observables.file.signature.trusted": [],
+        "observables.file.signature.issuer": [],
+        "observables.file.signature.subject": [],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList"
+        ],
+        "observables.registry.value": [
+          "CodexSandboxOnline"
+        ],
+        "registry_set.app.name": [
+          "codex-windows-sandbox-setup.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\Users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64"
+        ],
+        "registry_set.app.sha256": [
+          "3f1377fc199edf10b213dc52f20b4c273848ddc108d8a017d080607bc5d7284f"
+        ],
+        "registry_set.app.size": [
+          738096
+        ],
+        "registry_set.app.original_file_name": [],
+        "registry_set.app.original_file_version": [],
+        "registry_set.app.original_vendor_name": [],
+        "registry_set.cmd_line": [
+          "\"C:\\Users\\snirbe\\.vscode\\extensions\\openai.chatgpt-26.429.30905-win32-x64\\bin\\windows-x86_64\\codex-windows-sandbox-setup.exe\" eyJ2ZXJzaW9uIjo1LCJvZmZsaW5lX3VzZXJuYW1lIjoiQ29kZXhTYW5kYm94T2ZmbGluZSIsIm9ubGluZV91c2VybmFtZSI6IkNvZGV4U2FuZGJveE9ubGluZSIsImNvZGV4X2hvbWUiOiJDOlxcVXNlcnNcXHNuaXJiZVxcLmNvZGV4IiwiY29tbWFuZF9jd2QiOiJjOlxcU25pclxcMjAyNlRlc3QiLCJyZWFkX3Jvb3RzIjpbIkM6XFxQcm9ncmFtIEZpbGVzIiwiQzpcXFByb2dyYW0gRmlsZXMgKHg4NikiLCJDOlxcUHJvZ3JhbURhdGEiLCJDOlxcU25pclxcMjAyNlRlc3QiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmF0b20iLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmJhc2hfaGlzdG9yeSIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY2FjaGUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmNpc2NvIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5jb2RleCIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY29kZXhcXC5zYW5kYm94LWJpbiIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY3Vyc29yIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5kb3RuZXQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmdpdGNvbmZpZyIsIkM6XFxVc2Vyc1xcc25pcmJlXFwubG9jYWwiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLm1zLWFkIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5udWdldCIsIkM6XFxVc2Vyc1xcc25pcmJlXFwudGVtcGxhdGVlbmdpbmUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLnZzY29kZSIsIkM6XFxVc2Vyc1xcc25pcmJlXFwzRCBPYmplY3RzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGEiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcTG9jYWwiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcTG9jYWxcXE1pY3Jvc29mdFxcV2luZG93c1xcSU5ldENvb2tpZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZyIsIkM6XFxVc2Vyc1xcc25pcmJlXFxBcHBEYXRhXFxSb2FtaW5nXFxNaWNyb3NvZnRcXFdpbmRvd3NcXE5ldHdvcmsgU2hvcnRjdXRzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGFcXFJvYW1pbmdcXE1pY3Jvc29mdFxcV2luZG93c1xcUHJpbnRlciBTaG9ydGN1dHMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxSZWNlbnQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxTZW5kVG8iLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxTdGFydCBNZW51IiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGFcXFJvYW1pbmdcXE1pY3Jvc29mdFxcV2luZG93c1xcVGVtcGxhdGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXENvbnRhY3RzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXENyZWF0aXZlIENsb3VkIEZpbGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXERlc2t0b3AiLCJDOlxcVXNlcnNcXHNuaXJiZVxcRG9jdW1lbnRzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXERvd25sb2FkcyIsIkM6XFxVc2Vyc1xcc25pcmJlXFxGYXZvcml0ZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcSW50ZWxHcmFwaGljc1Byb2ZpbGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXExpbmtzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE11c2ljIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcbnR1c2VyLmRhdC5MT0cxIiwiQzpcXFVzZXJzXFxzbmlyYmVcXG50dXNlci5kYXQuTE9HMiIsIkM6XFxVc2Vyc1xcc25pcmJlXFxOVFVTRVIuREFUezUzYjM5ZTg4LTE4YzQtMTFlYS1hODExLTAwMGQzYWE0NjkyYn0uVE0uYmxmIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVR7NTNiMzllODgtMThjNC0xMWVhLWE4MTEtMDAwZDNhYTQ2OTJifS5UTUNvbnRhaW5lcjAwMDAwMDAwMDAwMDAwMDAwMDAxLnJlZ3RyYW5zLW1zIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVR7NTNiMzllODgtMThjNC0xMWVhLWE4MTEtMDAwZDNhYTQ2OTJifS5UTUNvbnRhaW5lcjAwMDAwMDAwMDAwMDAwMDAwMDAyLnJlZ3RyYW5zLW1zIiwiQzpcXFVzZXJzXFxzbmlyYmVcXG50dXNlci5pbmkiLCJDOlxcVXNlcnNcXHNuaXJiZVxcT25lRHJpdmUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcUGljdHVyZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2F2ZWQgR2FtZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2NyYXBib29rRmlsZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2VhcmNoZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcc291cmNlIiwiQzpcXFVzZXJzXFxzbmlyYmVcXFZpZGVvcyIsIkM6XFxXaW5kb3dzIl0sIndyaXRlX3Jvb3RzIjpbXSwiZGVueV93cml0ZV9wYXRocyI6W10sInByb3h5X3BvcnRzIjpbXSwiYWxsb3dfbG9jYWxfYmluZGluZyI6ZmFsc2UsInJlYWxfdXNlciI6InNuaXJiZSIsInJlZnJlc2hfb25seSI6ZmFsc2V9"
+        ],
+        "registry_set.pid": [
+          18944
+        ],
+        "registry_set.puid": [
+          35147
+        ],
+        "registry_set.guid": [
+          "ea2c8f03-c8db-8bf4-abc4-6bb7aa718880"
+        ],
+        "registry_set.boot_sid": [
+          "6b5c0a4e-9cc3-4314-841f-061e54c4e49a"
+        ],
+        "registry_set.ts": [
+          1778056354032224300
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList"
+        ],
+        "registry_set.value": [
+          "CodexSandboxOnline"
+        ],
+        "registry_set.data_txt": [],
+        "registry_set.data_int": [
+          0
+        ],
+        "registry_set.data_len": [
+          4
+        ],
+        "registry_set.user.domain": [
+          "OPENU"
+        ],
+        "registry_set.user.name": [
+          "snirbe"
+        ],
+        "registry_set.user.sid": [
+          "01050000000000051500000006df36616cafb1d82c1d297e921d0000"
+        ],
+        "normalized.observables.all": [
+          "codex-windows-sandbox-setup.exe",
+          "c:\\users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64",
+          "c:/users/snirbe/.vscode/extensions/.bf9d660f-4c27-4479-a6a9-09a2616e1da2/bin/windows-x86_64",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon\\specialaccounts\\userlist",
+          "codexsandboxonline",
+          "hidden user created"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "hidden user created"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "81048",
+        "event_index": 1,
+        "event_id": 7636693955299508295
+      },
+      "fields": {
+        "qradar.starttime": 1778056373189,
+        "qradar.sourceip": "10.149.11.28",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-06T08:32:49+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Hidden User Created",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "39659e20-e610-4b99-acdc-08a0574ceefb",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003",
+          "TA0005"
+        ],
+        "cisco.techniques": [
+          "T1098",
+          "T1112",
+          "T1564.002"
+        ],
+        "computer.hostname": "WK-SNIRBE.OPENU.LAN",
+        "computer.external_ip": "192.114.2.46",
+        "computer.network_ips": [
+          "10.149.11.28",
+          "172.18.32.1"
+        ],
+        "computer.network_macs": [
+          "30:9c:23:2f:d7:f0",
+          "00:15:5d:d8:c8:4e"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 10 22H2",
+        "computer.os.build": "19045.3693",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC0MZSX9",
+        "actions.action": [],
+        "actions.name": [],
+        "actions.path": [],
+        "actions.cmd_line": [],
+        "actions.sha256": [],
+        "actions.pid": [],
+        "actions.ppid": [],
+        "actions.status": [],
+        "actions.error": [],
+        "observables.file.name": [
+          "codex-windows-sandbox-setup.exe"
+        ],
+        "observables.file.path": [
+          "C:\\Users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64"
+        ],
+        "observables.file.md5": [],
+        "observables.file.sha1": [],
+        "observables.file.sha256": [],
+        "observables.file.signature.trusted": [],
+        "observables.file.signature.issuer": [],
+        "observables.file.signature.subject": [],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList"
+        ],
+        "observables.registry.value": [
+          "CodexSandboxOffline"
+        ],
+        "registry_set.app.name": [
+          "codex-windows-sandbox-setup.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\Users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64"
+        ],
+        "registry_set.app.sha256": [
+          "3f1377fc199edf10b213dc52f20b4c273848ddc108d8a017d080607bc5d7284f"
+        ],
+        "registry_set.app.size": [
+          738096
+        ],
+        "registry_set.app.original_file_name": [],
+        "registry_set.app.original_file_version": [],
+        "registry_set.app.original_vendor_name": [],
+        "registry_set.cmd_line": [
+          "\"C:\\Users\\snirbe\\.vscode\\extensions\\openai.chatgpt-26.429.30905-win32-x64\\bin\\windows-x86_64\\codex-windows-sandbox-setup.exe\" eyJ2ZXJzaW9uIjo1LCJvZmZsaW5lX3VzZXJuYW1lIjoiQ29kZXhTYW5kYm94T2ZmbGluZSIsIm9ubGluZV91c2VybmFtZSI6IkNvZGV4U2FuZGJveE9ubGluZSIsImNvZGV4X2hvbWUiOiJDOlxcVXNlcnNcXHNuaXJiZVxcLmNvZGV4IiwiY29tbWFuZF9jd2QiOiJjOlxcU25pclxcMjAyNlRlc3QiLCJyZWFkX3Jvb3RzIjpbIkM6XFxQcm9ncmFtIEZpbGVzIiwiQzpcXFByb2dyYW0gRmlsZXMgKHg4NikiLCJDOlxcUHJvZ3JhbURhdGEiLCJDOlxcU25pclxcMjAyNlRlc3QiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmF0b20iLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmJhc2hfaGlzdG9yeSIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY2FjaGUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmNpc2NvIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5jb2RleCIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY29kZXhcXC5zYW5kYm94LWJpbiIsIkM6XFxVc2Vyc1xcc25pcmJlXFwuY3Vyc29yIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5kb3RuZXQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLmdpdGNvbmZpZyIsIkM6XFxVc2Vyc1xcc25pcmJlXFwubG9jYWwiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLm1zLWFkIiwiQzpcXFVzZXJzXFxzbmlyYmVcXC5udWdldCIsIkM6XFxVc2Vyc1xcc25pcmJlXFwudGVtcGxhdGVlbmdpbmUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcLnZzY29kZSIsIkM6XFxVc2Vyc1xcc25pcmJlXFwzRCBPYmplY3RzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGEiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcTG9jYWwiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcTG9jYWxcXE1pY3Jvc29mdFxcV2luZG93c1xcSU5ldENvb2tpZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZyIsIkM6XFxVc2Vyc1xcc25pcmJlXFxBcHBEYXRhXFxSb2FtaW5nXFxNaWNyb3NvZnRcXFdpbmRvd3NcXE5ldHdvcmsgU2hvcnRjdXRzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGFcXFJvYW1pbmdcXE1pY3Jvc29mdFxcV2luZG93c1xcUHJpbnRlciBTaG9ydGN1dHMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxSZWNlbnQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxTZW5kVG8iLCJDOlxcVXNlcnNcXHNuaXJiZVxcQXBwRGF0YVxcUm9hbWluZ1xcTWljcm9zb2Z0XFxXaW5kb3dzXFxTdGFydCBNZW51IiwiQzpcXFVzZXJzXFxzbmlyYmVcXEFwcERhdGFcXFJvYW1pbmdcXE1pY3Jvc29mdFxcV2luZG93c1xcVGVtcGxhdGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXENvbnRhY3RzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXENyZWF0aXZlIENsb3VkIEZpbGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXERlc2t0b3AiLCJDOlxcVXNlcnNcXHNuaXJiZVxcRG9jdW1lbnRzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXERvd25sb2FkcyIsIkM6XFxVc2Vyc1xcc25pcmJlXFxGYXZvcml0ZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcSW50ZWxHcmFwaGljc1Byb2ZpbGVzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXExpbmtzIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE11c2ljIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVQiLCJDOlxcVXNlcnNcXHNuaXJiZVxcbnR1c2VyLmRhdC5MT0cxIiwiQzpcXFVzZXJzXFxzbmlyYmVcXG50dXNlci5kYXQuTE9HMiIsIkM6XFxVc2Vyc1xcc25pcmJlXFxOVFVTRVIuREFUezUzYjM5ZTg4LTE4YzQtMTFlYS1hODExLTAwMGQzYWE0NjkyYn0uVE0uYmxmIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVR7NTNiMzllODgtMThjNC0xMWVhLWE4MTEtMDAwZDNhYTQ2OTJifS5UTUNvbnRhaW5lcjAwMDAwMDAwMDAwMDAwMDAwMDAxLnJlZ3RyYW5zLW1zIiwiQzpcXFVzZXJzXFxzbmlyYmVcXE5UVVNFUi5EQVR7NTNiMzllODgtMThjNC0xMWVhLWE4MTEtMDAwZDNhYTQ2OTJifS5UTUNvbnRhaW5lcjAwMDAwMDAwMDAwMDAwMDAwMDAyLnJlZ3RyYW5zLW1zIiwiQzpcXFVzZXJzXFxzbmlyYmVcXG50dXNlci5pbmkiLCJDOlxcVXNlcnNcXHNuaXJiZVxcT25lRHJpdmUiLCJDOlxcVXNlcnNcXHNuaXJiZVxcUGljdHVyZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2F2ZWQgR2FtZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2NyYXBib29rRmlsZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcU2VhcmNoZXMiLCJDOlxcVXNlcnNcXHNuaXJiZVxcc291cmNlIiwiQzpcXFVzZXJzXFxzbmlyYmVcXFZpZGVvcyIsIkM6XFxXaW5kb3dzIl0sIndyaXRlX3Jvb3RzIjpbXSwiZGVueV93cml0ZV9wYXRocyI6W10sInByb3h5X3BvcnRzIjpbXSwiYWxsb3dfbG9jYWxfYmluZGluZyI6ZmFsc2UsInJlYWxfdXNlciI6InNuaXJiZSIsInJlZnJlc2hfb25seSI6ZmFsc2V9"
+        ],
+        "registry_set.pid": [
+          18944
+        ],
+        "registry_set.puid": [
+          35147
+        ],
+        "registry_set.guid": [
+          "ea2c8f03-c8db-8bf4-abc4-6bb7aa718880"
+        ],
+        "registry_set.boot_sid": [
+          "6b5c0a4e-9cc3-4314-841f-061e54c4e49a"
+        ],
+        "registry_set.ts": [
+          1778056354031237700
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList"
+        ],
+        "registry_set.value": [
+          "CodexSandboxOffline"
+        ],
+        "registry_set.data_txt": [],
+        "registry_set.data_int": [
+          0
+        ],
+        "registry_set.data_len": [
+          4
+        ],
+        "registry_set.user.domain": [
+          "OPENU"
+        ],
+        "registry_set.user.name": [
+          "snirbe"
+        ],
+        "registry_set.user.sid": [
+          "01050000000000051500000006df36616cafb1d82c1d297e921d0000"
+        ],
+        "normalized.observables.all": [
+          "codex-windows-sandbox-setup.exe",
+          "c:\\users\\snirbe\\.vscode\\extensions\\.bf9d660f-4c27-4479-a6a9-09a2616e1da2\\bin\\windows-x86_64",
+          "c:/users/snirbe/.vscode/extensions/.bf9d660f-4c27-4479-a6a9-09a2616e1da2/bin/windows-x86_64",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon\\specialaccounts\\userlist",
+          "codexsandboxoffline",
+          "hidden user created"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "hidden user created"
+      }
+    }
+  ]
+}

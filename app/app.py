@@ -1,12 +1,31 @@
+import importlib
+
 import streamlit as st
 
-from answer_event_question import display_value, get_matching_event_rows
-from search_router import route_metadata_text_search, route_search, run_exact_field_search
+import answer_event_question
+import metadata_records
+import search_metadata_text
+import search_router
+
+metadata_records = importlib.reload(metadata_records)
+answer_event_question = importlib.reload(answer_event_question)
+search_metadata_text = importlib.reload(search_metadata_text)
+search_router = importlib.reload(search_router)
+
+display_value = answer_event_question.display_value
+get_matching_event_rows = answer_event_question.get_matching_event_rows
+discover_metadata_record_files = metadata_records.discover_metadata_record_files
+load_event_metadata_records = metadata_records.load_event_metadata_records
+route_metadata_text_search = search_router.route_metadata_text_search
+route_search = search_router.route_search
+run_exact_field_search = search_router.run_exact_field_search
 
 
 MODE_AUTO = "Auto / Routed Search"
 MODE_EXACT = "Exact Field Search"
 MODE_TEXT = "Metadata Text Search"
+SCOPE_SPECIFIC = "Search inside a specific offense"
+SCOPE_ALL = "Search across all offenses"
 
 
 st.set_page_config(page_title="Event Metadata Search", layout="wide")
@@ -49,6 +68,7 @@ def metadata_result_rows(search_result):
     for rank, event_result in enumerate(search_result.get("results", []), start=1):
         row = {
             "rank": rank,
+            "offense_id": event_result.get("offense_id"),
             "event_index": event_result["event_index"],
             "event_id": event_result["event_id"],
             "score": event_result["score"],
@@ -61,7 +81,7 @@ def metadata_result_rows(search_result):
     return rows
 
 
-def render_exact_result(search_result):
+def render_exact_result(search_result, records):
     if search_result["resolved_field"] is None:
         st.warning("No matching metadata field found.")
         return
@@ -81,7 +101,7 @@ def render_exact_result(search_result):
         st.info("No values found.")
 
     st.subheader("Matching events")
-    rows = get_matching_event_rows(search_result)
+    rows = get_matching_event_rows(search_result, records=records)
     if rows:
         st.dataframe(rows, hide_index=True, use_container_width=True)
     else:
@@ -96,23 +116,25 @@ def render_metadata_result(search_result):
         st.info("No strong metadata text match found.")
 
 
-def run_selected_mode(selected_mode, query, limit):
+def run_selected_mode(selected_mode, query, limit, records):
     if selected_mode == MODE_EXACT:
-        return run_exact_field_search(query)
+        return run_exact_field_search(query, records=records)
     if selected_mode == MODE_TEXT:
-        return route_metadata_text_search(query, limit=limit)
-    return route_search(query, limit=limit)
+        return route_metadata_text_search(query, limit=limit, records=records)
+    return route_search(query, limit=limit, records=records)
 
 
-def render_search(selected_mode, query, limit):
+def render_search(selected_scope, selected_offense_id, selected_mode, query, limit, records):
     if not query.strip():
         st.warning("Enter a query.")
         return
 
-    routed_result = run_selected_mode(selected_mode, query, limit)
+    routed_result = run_selected_mode(selected_mode, query, limit, records)
     result = routed_result["result"]
 
-    mode_metric, method_metric, count_metric = st.columns(3)
+    scope_metric, mode_metric, method_metric, count_metric = st.columns(4)
+    scope_value = selected_scope if selected_scope == SCOPE_ALL else f"{selected_scope}: {selected_offense_id}"
+    scope_metric.text_input("Selected search scope", value=scope_value, disabled=True)
     mode_metric.text_input("Selected search mode", value=selected_mode, disabled=True)
     method_metric.text_input("Method actually used", value=routed_result["method"], disabled=True)
     count_metric.metric("Result count", routed_result["result_count"])
@@ -128,11 +150,35 @@ def render_search(selected_mode, query, limit):
         st.info("No route decisions recorded.")
 
     if routed_result["method"] == "exact_field":
-        render_exact_result(result)
+        render_exact_result(result, records)
     else:
         st.subheader("Ranked events")
         render_metadata_result(result)
 
+
+available_records = discover_metadata_record_files()
+
+if not available_records:
+    st.error("No event metadata record files found.")
+    st.stop()
+
+scope_col, offense_col = st.columns([3, 2])
+selected_scope = scope_col.radio(
+    "Search scope",
+    [SCOPE_SPECIFIC, SCOPE_ALL],
+    index=0,
+    horizontal=True,
+    key="selected_search_scope",
+)
+
+selected_offense_id = None
+if selected_scope == SCOPE_SPECIFIC:
+    offense_options = [record["offense_id"] for record in available_records]
+    selected_offense_id = offense_col.selectbox("Offense ID", offense_options, index=0, key="selected_offense_id")
+    active_records = load_event_metadata_records(offense_id=selected_offense_id)
+else:
+    offense_col.text_input("Offense ID", value="All discovered offenses", disabled=True)
+    active_records = load_event_metadata_records(all_offenses=True)
 
 mode_col, limit_col = st.columns([3, 1])
 selected_mode = mode_col.selectbox(
@@ -153,4 +199,4 @@ st.button("Search", type="primary", on_click=request_search)
 
 if st.session_state["search_requested"]:
     st.session_state["search_requested"] = False
-    render_search(selected_mode, query, limit)
+    render_search(selected_scope, selected_offense_id, selected_mode, query, limit, active_records)

@@ -7,7 +7,8 @@ from collections import Counter
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RECORDS = REPO_ROOT / "data" / "event_metadata_records_82303.json"
+
+from metadata_records import load_event_metadata_records  # noqa: E402
 
 STOPWORDS = {
     "a",
@@ -74,10 +75,18 @@ DEFAULT_DISPLAY_FIELDS = [
     "qradar.destinationip",
     "cisco.severity",
     "actions.name",
+    "registry_set.app.name",
+    "registry_set.app.path",
+    "registry_set.app.sha256",
+    "registry_set.cmd_line",
     "observables.file.name",
     "observables.registry.key",
     "observables.registry.value",
+    "registry_set.key",
+    "registry_set.value",
     "registry_set.data_txt",
+    "registry_set.data_int",
+    "registry_set.user.name",
 ]
 
 IP_ADDRESS_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
@@ -106,13 +115,6 @@ REGISTRY_PATH_RE = re.compile(
 
 STRICT_IDENTIFIER_CATEGORIES = {"ip", "dotted_numeric", "hash", "uuid", "registry_path"}
 FUZZY_IDENTIFIER_CATEGORIES = {"file_name", "hostname"}
-
-
-def load_event_metadata_records(path=DEFAULT_RECORDS):
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
-    if "events" not in data or not isinstance(data["events"], list):
-        raise ValueError("Event metadata records file must contain an 'events' list")
-    return data
 
 
 def flatten_values(value):
@@ -293,6 +295,7 @@ def build_search_documents(records):
         event_index = identity.get("event_index", fallback_index)
         documents.append(
             {
+                "offense_id": identity.get("offense_id", records.get("offense_id")),
                 "event_index": event_index,
                 "event_id": identity.get("event_id"),
                 "fields": fields,
@@ -477,6 +480,22 @@ def bounded_hostname_fuzzy_matches(analysis, document):
     return matches
 
 
+def bounded_file_name_fuzzy_matches(analysis, document):
+    matches = []
+    query_file_names = analysis["identifiers"].get("file_name", [])
+    document_file_names = document["identifiers"].get("file_name", [])
+    for query_file_name in query_file_names:
+        for document_file_name in document_file_names:
+            if query_file_name == document_file_name:
+                continue
+            score, match_type = fuzzy_match_score(query_file_name, document_file_name)
+            if match_type != "fuzzy":
+                continue
+            matches.append({"query": query_file_name, "matched": document_file_name, "score": round(score, 4)})
+    matches.sort(key=lambda item: (-item["score"], item["matched"]))
+    return matches
+
+
 def exact_identifier_matches(analysis, document):
     matches = analysis["identifier_tokens"] & document["identifier_tokens"]
     matches = matches | set(hostname_identifier_matches(analysis, document))
@@ -486,6 +505,7 @@ def exact_identifier_matches(analysis, document):
 def fuzzy_identifier_matches(analysis, document):
     matches = set(exact_identifier_matches(analysis, document))
     matches.update(match["matched"] for match in bounded_hostname_fuzzy_matches(analysis, document))
+    matches.update(match["matched"] for match in bounded_file_name_fuzzy_matches(analysis, document))
     return sorted(matches)
 
 
@@ -501,6 +521,8 @@ def identifier_query_can_match_bm25(analysis, document):
 
 def strict_identifier_query_can_fuzzy_match(analysis, document):
     if not analysis["strict_identifier_tokens"]:
+        if analysis["identifiers"].get("file_name"):
+            return bool(exact_identifier_matches(analysis, document) or bounded_file_name_fuzzy_matches(analysis, document))
         if analysis["identifiers"].get("hostname"):
             return bool(hostname_identifier_matches(analysis, document) or bounded_hostname_fuzzy_matches(analysis, document))
         return True
@@ -554,6 +576,21 @@ def best_fuzzy_match(query_token, document, document_count, frequencies):
 
 
 def fuzzy_matches(query_tokens, document, document_count, frequencies, analysis):
+    if analysis["identifiers"].get("file_name"):
+        matches = []
+        for match in bounded_file_name_fuzzy_matches(analysis, document):
+            idf = inverse_document_frequency(match["matched"], document_count, frequencies)
+            matches.append(
+                {
+                    "query_term": match["query"],
+                    "matched_term": match["matched"],
+                    "match_type": "fuzzy",
+                    "score": match["score"],
+                    "weighted_score": idf * match["score"] * 0.45,
+                }
+            )
+        return matches
+
     matches = []
     for token in query_tokens:
         if is_weak_identifier_fragment(token, analysis):
@@ -566,6 +603,7 @@ def fuzzy_matches(query_tokens, document, document_count, frequencies, analysis)
 
 def result_row(document, score, matched_terms, method, matched_identifiers=None):
     return {
+        "offense_id": document["offense_id"],
         "event_index": document["event_index"],
         "event_id": document["event_id"],
         "score": round(score, 4),
@@ -592,13 +630,25 @@ def empty_result(query, method):
     }
 
 
-def search_metadata_text_bm25(query, records_path=DEFAULT_RECORDS, limit=10, min_score=0.0):
+def search_metadata_text_bm25(
+    query,
+    records_path=None,
+    limit=10,
+    min_score=0.0,
+    offense_id=None,
+    all_offenses=False,
+    records=None,
+):
     query = query.strip()
     method = "bm25_metadata_text"
     if not query:
         return empty_result(query, method)
 
-    records = load_event_metadata_records(records_path)
+    records = records or load_event_metadata_records(
+        records_path=records_path,
+        offense_id=offense_id,
+        all_offenses=all_offenses,
+    )
     documents = build_search_documents(records)
     analysis = query_analysis(query)
     query_tokens = analysis["tokens"]
@@ -641,13 +691,25 @@ def search_metadata_text_bm25(query, records_path=DEFAULT_RECORDS, limit=10, min
     }
 
 
-def search_metadata_text_fuzzy(query, records_path=DEFAULT_RECORDS, limit=10, min_score=0.0):
+def search_metadata_text_fuzzy(
+    query,
+    records_path=None,
+    limit=10,
+    min_score=0.0,
+    offense_id=None,
+    all_offenses=False,
+    records=None,
+):
     query = query.strip()
     method = "fuzzy_metadata_text"
     if not query:
         return empty_result(query, method)
 
-    records = load_event_metadata_records(records_path)
+    records = records or load_event_metadata_records(
+        records_path=records_path,
+        offense_id=offense_id,
+        all_offenses=all_offenses,
+    )
     documents = build_search_documents(records)
     analysis = query_analysis(query)
     query_tokens = analysis["tokens"]
@@ -693,18 +755,45 @@ def search_metadata_text_fuzzy(query, records_path=DEFAULT_RECORDS, limit=10, mi
     }
 
 
-def search_metadata_text(query, records_path=DEFAULT_RECORDS, limit=10, min_score=0.0, mode="bm25"):
+def search_metadata_text(
+    query,
+    records_path=None,
+    limit=10,
+    min_score=0.0,
+    mode="bm25",
+    offense_id=None,
+    all_offenses=False,
+    records=None,
+):
     if mode == "bm25":
-        return search_metadata_text_bm25(query, records_path=records_path, limit=limit, min_score=min_score)
+        return search_metadata_text_bm25(
+            query,
+            records_path=records_path,
+            limit=limit,
+            min_score=min_score,
+            offense_id=offense_id,
+            all_offenses=all_offenses,
+            records=records,
+        )
     if mode == "fuzzy":
-        return search_metadata_text_fuzzy(query, records_path=records_path, limit=limit, min_score=min_score)
+        return search_metadata_text_fuzzy(
+            query,
+            records_path=records_path,
+            limit=limit,
+            min_score=min_score,
+            offense_id=offense_id,
+            all_offenses=all_offenses,
+            records=records,
+        )
     raise ValueError("mode must be 'bm25' or 'fuzzy'")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Search Event Metadata Records with deterministic metadata text search.")
     parser.add_argument("--query", required=True, help="Metadata text search query")
-    parser.add_argument("--records", default=str(DEFAULT_RECORDS), help="Path to event metadata records JSON")
+    parser.add_argument("--records", default=None, help="Path to one event metadata records JSON file")
+    parser.add_argument("--offense-id", default=None, help="Search one discovered offense ID")
+    parser.add_argument("--all-offenses", action="store_true", help="Search all discovered metadata files")
     parser.add_argument("--limit", type=int, default=10, help="Maximum number of ranked events to return")
     parser.add_argument("--min-score", type=float, default=0.0, help="Minimum score")
     parser.add_argument("--mode", choices=["bm25", "fuzzy"], default="bm25", help="Metadata text search mode")
@@ -716,6 +805,8 @@ def main():
         limit=args.limit,
         min_score=args.min_score,
         mode=args.mode,
+        offense_id=args.offense_id,
+        all_offenses=args.all_offenses,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
