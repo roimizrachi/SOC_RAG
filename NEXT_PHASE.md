@@ -1,86 +1,69 @@
-# PHASE_1_COMPLETED
+# NEXT_PHASE
 
-Phase 1 has been completed.
+Phase 2 is complete.
 
-This file records the previous next phase, which delivered the first analyst-facing deterministic search application for Event Metadata Records.
+The recommended next phase is Phase 3: Deterministic Offense Profile generation.
 
-The real next phase is now documented in `PHASE_2_PLAN.md`.
+Do not implement Phase 3 until explicitly approved.
 
-## Completed Goal
+## Recommended Phase 3 Goal
 
-Build a deterministic analyst search interface over Event Metadata Records for a single offense.
+Generate a deterministic Offense Profile from the existing single-offense Event Metadata Records.
 
-## Completed Scope
-
-- Deterministic Event Metadata search.
-- Single-offense search over offense `82303`.
-- Event-level search only.
-- Alias-based field resolution using `event_field_aliases_v1.json`.
-- Answer workflow in `app/answer_event_question.py`.
-- Streamlit analyst interface in `app/app.py`.
-- Duplicate value removal.
-- Matching event index return.
-
-## Completed Phase 1 Flow
+## Suggested Phase 3 Flow
 
 ```text
 data/event_metadata_records_82303.json
-  -> mappings/event_field_aliases_v1.json
-  -> scripts/resolve_query_field.py
-  -> app/answer_event_question.py
-  -> app/app.py
+  -> Deterministic Offense Profile
+      -> Hosts
+      -> Users
+      -> IPs
+      -> Detections
+      -> Processes
+      -> Registry keys
+      -> Event counts
+      -> Notable artifacts
 ```
 
-## Completed Deliverables
+## Recommended Scope
 
-- `app/answer_event_question.py`
+- Single offense only.
+- Deterministic only.
+- Event Metadata Records only.
+- No new offense datasets.
+- No dataset regeneration unless explicitly approved.
+- Generate structured offense-level summaries from existing event fields.
+
+## Recommended Deliverables
+
+Potential Phase 3 deliverables:
+
+- `app/offense_profile.py`
+  - Build a deterministic offense profile from `data/event_metadata_records_82303.json`.
+  - Aggregate hosts, users, IPs, detections, processes, registry keys, counts, and artifacts.
+
+- `scripts/validate_offense_profile.py`
+  - Validate deterministic output shape and expected counts.
+
 - `app/app.py`
+  - Optionally add an Offense Profile view after approval.
 
-## Completed Search Behavior
+- `README.md`
+  - Document the Phase 3 profile architecture and validation commands.
 
-`app/answer_event_question.py`:
-
-1. Receives an analyst question.
-2. Resolves the question to a metadata field using `scripts/resolve_query_field.py`.
-3. Loads `data/event_metadata_records_82303.json`.
-4. Collects values for the resolved field.
-5. Removes duplicate values.
-6. Returns:
-
-```python
-{
-    "question": question,
-    "resolved_field": field_name,
-    "values": unique_values,
-    "event_count": count,
-    "matching_event_indexes": indexes
-}
-```
-
-`app/app.py` displays:
-
-- Question input.
-- Ask button.
-- Resolved field.
-- Values.
-- Event count.
-- Matching events table.
-
-## Completed Validation
-
-- Supported example questions return results.
-- Duplicate values are removed.
-- Matching event indexes are returned.
-- Streamlit app startup was validated.
-
-## Phase 1 Constraints Preserved
-
-Phase 1 did not implement:
+## Continue To Avoid Unless Explicitly Approved
 
 - RAG
 - Embeddings
-- Semantic search
 - Vector search
-- OpenAI API calls
+- Semantic search
 - LLM calls
+- OpenAI API calls
+- Qdrant
 - Multi-offense search
+- New offense datasets
+
+## Phase 2 Reference
+
+Phase 2 completion is documented in `PHASE_2_COMPLETED.md`.
+
