@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "starttime": 1780479832236,
+      "protocolid": 255,
+      "sourceip": "10.147.130.40",
+      "logsourceid": 964,
+      "qid": 111250007,
+      "sourceport": 0,
+      "eventcount": 1,
+      "magnitude": 5,
+      "identityip": "0.0.0.0",
+      "destinationip": "147.233.249.70",
+      "destinationport": 0,
+      "category": 6004,
+      "username": "RA-SIF@CLASS",
+      "utf8_payload": "{\"id\":7647102632447705092,\"timestamp\":1780479828,\"timestamp_nanoseconds\":611000000,\"date\":\"2026-06-03T09:43:48+00:00\",\"event_type\":\"Threat Detected\",\"event_type_id\":1090519054,\"detection\":\"PUA.Win.File.Generic::95.sbx.tg\",\"detection_id\":\"7647102632447705089\",\"connector_guid\":\"8bea3726-6d71-4ca7-91d0-503ab96bc1c4\",\"group_guids\":[\"3f13f398-6883-45b6-a7c2-dcf63fe780f5\"],\"severity\":\"Medium\",\"computer\":{\"connector_guid\":\"8bea3726-6d71-4ca7-91d0-503ab96bc1c4\",\"hostname\":\"RA-SIF1.OPENU.CLASS\",\"external_ip\":\"192.114.1.100\",\"user\":\"RA-SIF@CLASS\",\"active\":true,\"network_addresses\":[{\"ip\":\"10.147.130.40\",\"mac\":\"74:86:e2:0c:b1:82\"}],\"links\":{\"computer\":\"https://api.eu.amp.cisco.com/v1/computers/8bea3726-6d71-4ca7-91d0-503ab96bc1c4\",\"trajectory\":\"https://api.eu.amp.cisco.com/v1/computers/8bea3726-6d71-4ca7-91d0-503ab96bc1c4/trajectory\",\"group\":\"https://api.eu.amp.cisco.com/v1/groups/3f13f398-6883-45b6-a7c2-dcf63fe780f5\"}},\"file\":{\"disposition\":\"Malicious\",\"file_name\":\"RimonCrtNew.exe\",\"file_path\":\"\\\\\\\\?\\\\E:\\\\utils\\\\RimonCrtNew.exe\",\"identity\":{\"sha256\":\"a5c6b4104e3be0d9ee841293773a453671df013420c92686a5a1e70eee80a886\",\"sha1\":\"460a2266a32e14aa7fe6674d775f1a9573156b49\",\"md5\":\"fc5be1af27d7e543c0a72180835da4ea\"},\"parent\":{\"process_id\":9852,\"disposition\":\"Unknown\",\"file_name\":\"explorer.exe\",\"identity\":{\"sha256\":\"05dcfa28fef24bd79ad2fc7b5e236024d6875ba49f2a5ed09e43c27ee7f1bfc2\",\"sha1\":\"1996815c474b75f849a0883b523f378be95131b8\",\"md5\":\"0833e505dcc2203d6375cab9fff4f480\"}}},\"tactics\":[\"TA0002\",\"TA0011\",\"TA0042\"],\"techniques\":[\"T1105\",\"T1204\",\"T1204.003\",\"T1569\"]}\n"
+    }
+  ]
+}

@@ -20,6 +20,7 @@ dist/
 .ruff_cache/
 .coverage
 htmlcov/
+test_uploads/
 
 # Streamlit local secrets
 .streamlit/secrets.toml
