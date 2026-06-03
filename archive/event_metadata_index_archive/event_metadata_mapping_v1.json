@@ -1,0 +1,332 @@
+{
+  "mapping_name": "event_metadata_mapping_v1",
+  "description": "Field mapping for extracting Event-level Metadata Index from a QRadar event with Cisco Secure Endpoint utf8_payload.",
+  "source_file_example": "offense_82303_events_964_fixed(1).json",
+  "notes": [
+    "Each QRadar event contains an outer event object and an inner utf8_payload JSON string.",
+    "Extractor should parse event['utf8_payload'] with json.loads before applying utf8_payload paths.",
+    "Fields are intended for exact match and filtering at the Event Metadata Index layer.",
+    "Arrays use [] to indicate values should be collected from all objects in the array.",
+    "Missing fields should return null or an empty list, depending on field cardinality."
+  ],
+  "event_identity": {
+    "offense_id": {
+      "source": "provided_by_pipeline",
+      "type": "string",
+      "cardinality": "single",
+      "required": true,
+      "description": "Offense identifier supplied by filename, QRadar API, or pipeline context."
+    },
+    "event_index": {
+      "source": "generated_by_pipeline",
+      "type": "integer",
+      "cardinality": "single",
+      "required": true,
+      "description": "Zero-based index of the event inside the offense events array."
+    },
+    "event_id": {
+      "source": "utf8_payload.id",
+      "type": "string",
+      "cardinality": "single",
+      "required": true,
+      "description": "Cisco Secure Endpoint event id."
+    }
+  },
+  "fields": {
+    "qradar.starttime": {
+      "source": "event.starttime",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "qradar.sourceip": {
+      "source": "event.sourceip",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "qradar.destinationip": {
+      "source": "event.destinationip",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "qradar.logsourceid": {
+      "source": "event.logsourceid",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "qradar.qid": {
+      "source": "event.qid",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "qradar.category": {
+      "source": "event.category",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "qradar.magnitude": {
+      "source": "event.magnitude",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "qradar.username": {
+      "source": "event.username",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.date": {
+      "source": "utf8_payload.date",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.event_type": {
+      "source": "utf8_payload.event_type",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.event_type_id": {
+      "source": "utf8_payload.event_type_id",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "cisco.detection": {
+      "source": "utf8_payload.detection",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.severity": {
+      "source": "utf8_payload.severity",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.connector_guid": {
+      "source": "utf8_payload.connector_guid",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "cisco.group_guids": {
+      "source": "utf8_payload.group_guids[]",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "cisco.tactics": {
+      "source": "utf8_payload.tactics[]",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "cisco.techniques": {
+      "source": "utf8_payload.techniques[]",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "computer.hostname": {
+      "source": "utf8_payload.computer.hostname",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.external_ip": {
+      "source": "utf8_payload.computer.external_ip",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.network_ips": {
+      "source": "utf8_payload.computer.network_addresses[].ip",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "computer.network_macs": {
+      "source": "utf8_payload.computer.network_addresses[].mac",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "computer.os.name": {
+      "source": "utf8_payload.device.os.name",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.os.version": {
+      "source": "utf8_payload.device.os.version",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.os.build": {
+      "source": "utf8_payload.device.os.build",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.hw_info.vendor_name": {
+      "source": "utf8_payload.device.hw_info.vendor_name",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "computer.hw_info.serial_number": {
+      "source": "utf8_payload.device.hw_info.serial_number",
+      "type": "string",
+      "cardinality": "single"
+    },
+    "actions.action": {
+      "source": "utf8_payload.bp_data.details.actions[].action",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.name": {
+      "source": "utf8_payload.bp_data.details.actions[].name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.path": {
+      "source": "utf8_payload.bp_data.details.actions[].path",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.cmd_line": {
+      "source": "utf8_payload.bp_data.details.actions[].cmd_line",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.sha256": {
+      "source": "utf8_payload.bp_data.details.actions[].sha256",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.pid": {
+      "source": "utf8_payload.bp_data.details.actions[].pid",
+      "type": "integer",
+      "cardinality": "multi"
+    },
+    "actions.ppid": {
+      "source": "utf8_payload.bp_data.details.actions[].ppid",
+      "type": "integer",
+      "cardinality": "multi"
+    },
+    "actions.status": {
+      "source": "utf8_payload.bp_data.details.actions[].status",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "actions.error": {
+      "source": "utf8_payload.bp_data.details.actions[].error",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.name": {
+      "source": "utf8_payload.observables.file[].name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.path": {
+      "source": "utf8_payload.observables.file[].path",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.md5": {
+      "source": "utf8_payload.observables.file[].md5",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.sha1": {
+      "source": "utf8_payload.observables.file[].sha1",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.sha256": {
+      "source": "utf8_payload.observables.file[].sha256",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.signature.trusted": {
+      "source": "utf8_payload.observables.file[].signature.trusted",
+      "type": "boolean",
+      "cardinality": "multi"
+    },
+    "observables.file.signature.issuer": {
+      "source": "utf8_payload.observables.file[].signature.issuer",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.file.signature.subject": {
+      "source": "utf8_payload.observables.file[].signature.subject",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.registry.key": {
+      "source": "utf8_payload.observables.registry[].key",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "observables.registry.value": {
+      "source": "utf8_payload.observables.registry[].value",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.name": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.path": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.path",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.sha256": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.sha256",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.original_file_name": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.original_file_name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.original_file_version": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.original_file_version",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.app.original_vendor_name": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.app.original_vendor_name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.key": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.key",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.value": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.value",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.data_txt": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.data_txt",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.user.domain": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.user.domain",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "registry_set.user.name": {
+      "source": "utf8_payload.bp_data.details.matched_activity.events[].registry:set.user.name",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "normalized.observables.all": {
+      "source": "utf8_payload.normalized.observables.all[]",
+      "type": "string",
+      "cardinality": "multi"
+    },
+    "normalized.severity_id": {
+      "source": "utf8_payload.normalized.severity_id",
+      "type": "integer",
+      "cardinality": "single"
+    },
+    "normalized.name": {
+      "source": "utf8_payload.normalized.name",
+      "type": "string",
+      "cardinality": "single"
+    }
+  }
+}

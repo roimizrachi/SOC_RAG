@@ -1,0 +1,1466 @@
+{
+  "offense_id": "82303",
+  "event_count": 10,
+  "events": [
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 0,
+        "event_id": 7643996585113681924
+      },
+      "fields": {
+        "qradar.starttime": 1779756648407,
+        "qradar.sourceip": "10.149.9.32",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-26T00:50:45+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "9933acba-236b-415b-8ba4-578d0cbded39",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5342.OPENU.LAN",
+        "computer.external_ip": "192.114.2.46",
+        "computer.network_ips": [
+          "10.149.9.32"
+        ],
+        "computer.network_macs": [
+          "6c:4b:90:a7:87:e7"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC13G2YV",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1660
+        ],
+        "actions.ppid": [
+          1268
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 1,
+        "event_id": 7643988201337520132
+      },
+      "fields": {
+        "qradar.starttime": 1779754695527,
+        "qradar.sourceip": "10.149.9.24",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-26T00:18:13+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "979761a7-3e16-4352-adae-3e616f41a3d6",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5341.OPENU.LAN",
+        "computer.external_ip": "192.114.2.46",
+        "computer.network_ips": [
+          "10.149.9.24"
+        ],
+        "computer.network_macs": [
+          "6c:4b:90:f9:5f:73"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1KX6KL",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1648
+        ],
+        "actions.ppid": [
+          1808
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 2,
+        "event_id": 7643951144359690244
+      },
+      "fields": {
+        "qradar.starttime": 1779746068854,
+        "qradar.sourceip": "10.149.9.31",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T21:54:25+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "32dd7caf-6bbc-45db-b9ee-9a6681281064",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5414.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.31"
+        ],
+        "computer.network_macs": [
+          "2c:f0:5d:43:f5:3f"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1L4MEW",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1688
+        ],
+        "actions.ppid": [
+          1440
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 3,
+        "event_id": 7643960597582708740
+      },
+      "fields": {
+        "qradar.starttime": 1779748277172,
+        "qradar.sourceip": "10.149.9.59",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T22:31:06+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "a7a92578-4dd7-49ad-bc3f-4cebb22cddf9",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5345.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.59"
+        ],
+        "computer.network_macs": [
+          "2c:f0:5d:43:f3:6c"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1L4MEY",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1812
+        ],
+        "actions.ppid": [
+          1208
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 4,
+        "event_id": 7643959996287287300
+      },
+      "fields": {
+        "qradar.starttime": 1779748129766,
+        "qradar.sourceip": "10.149.9.21",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T22:28:46+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "179f01f1-84b4-45b3-90c0-3d1edef6adb4",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-2024.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.21"
+        ],
+        "computer.network_macs": [
+          "2c:f0:5d:43:f3:56"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1L4ME1",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1804
+        ],
+        "actions.ppid": [
+          1136
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 5,
+        "event_id": 7643958995559907332
+      },
+      "fields": {
+        "qradar.starttime": 1779747895237,
+        "qradar.sourceip": "10.147.9.58",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T22:24:53+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "76c4a764-7d6a-4b73-ba3b-51d8c12a09be",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDP-5534.OPENU.LAN",
+        "computer.external_ip": "192.114.2.46",
+        "computer.network_ips": [
+          "10.147.9.58"
+        ],
+        "computer.network_macs": [
+          "74:86:e2:0c:db:cf"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "Dell Inc.",
+        "computer.hw_info.serial_number": "11FYYL3",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          2072
+        ],
+        "actions.ppid": [
+          1660
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 6,
+        "event_id": 7643947725565722628
+      },
+      "fields": {
+        "qradar.starttime": 1779745270690,
+        "qradar.sourceip": "10.149.9.45",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T21:41:09+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "388a1e1b-9fae-4fcc-8fa8-1d910102deb4",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5340.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.45"
+        ],
+        "computer.network_macs": [
+          "2c:f0:5d:43:f9:0b"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1L103P",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          996
+        ],
+        "actions.ppid": [
+          1052
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 7,
+        "event_id": 7643956667687632900
+      },
+      "fields": {
+        "qradar.starttime": 1779747352865,
+        "qradar.sourceip": "10.149.9.37",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T22:15:51+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "f62add1e-9461-4307-b5bf-73a5fe5eab4e",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-5418.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.37"
+        ],
+        "computer.network_macs": [
+          "6c:4b:90:f9:5e:c6"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1KX6JP",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1876
+        ],
+        "actions.ppid": [
+          1724
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 8,
+        "event_id": 7643943834325352452
+      },
+      "fields": {
+        "qradar.starttime": 1779744366132,
+        "qradar.sourceip": "10.147.8.81",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T21:26:03+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "5de32bbe-b9fd-4e28-9044-1531bd80fde8",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDP-5517A.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.147.8.81"
+        ],
+        "computer.network_macs": [
+          "b0:7b:25:19:69:f9"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "Dell Inc.",
+        "computer.hw_info.serial_number": "8TG79D3",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          2096
+        ],
+        "actions.ppid": [
+          2060
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    },
+    {
+      "event_identity": {
+        "offense_id": "82303",
+        "event_index": 9,
+        "event_id": 7643970171064811524
+      },
+      "fields": {
+        "qradar.starttime": 1779750498142,
+        "qradar.sourceip": "10.149.9.39",
+        "qradar.destinationip": "147.233.249.70",
+        "qradar.logsourceid": 964,
+        "qradar.qid": 111250108,
+        "qradar.category": 7002,
+        "qradar.magnitude": 4,
+        "qradar.username": null,
+        "cisco.date": "2026-05-25T23:08:15+00:00",
+        "cisco.event_type": "Threat Detection",
+        "cisco.event_type_id": 553648222,
+        "cisco.detection": "Winlogon UserInit Registry Key Modification",
+        "cisco.severity": "Medium",
+        "cisco.connector_guid": "179f01f1-84b4-45b3-90c0-3d1edef6adb4",
+        "cisco.group_guids": [
+          "b28f095e-50b4-4581-ae96-686130a83f65"
+        ],
+        "cisco.tactics": [
+          "TA0003"
+        ],
+        "cisco.techniques": [
+          "T1547.004"
+        ],
+        "computer.hostname": "WK-MOKEDM-2021.OPENU.LAN",
+        "computer.external_ip": "192.114.2.53",
+        "computer.network_ips": [
+          "10.149.9.39"
+        ],
+        "computer.network_macs": [
+          "2c:f0:5d:1d:5b:5e"
+        ],
+        "computer.os.name": "Windows",
+        "computer.os.version": "Windows 11 24H2",
+        "computer.os.build": "26100.6899",
+        "computer.hw_info.vendor_name": "LENOVO",
+        "computer.hw_info.serial_number": "PC1KJDLP",
+        "actions.action": [
+          "end_process"
+        ],
+        "actions.name": [
+          "setupplatform.exe"
+        ],
+        "actions.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "actions.cmd_line": [
+          "C:\\$WINDOWS.~BT\\Sources\\SetupPlatform.exe /preoobe"
+        ],
+        "actions.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "actions.pid": [
+          1792
+        ],
+        "actions.ppid": [
+          1144
+        ],
+        "actions.status": [
+          "noop"
+        ],
+        "actions.error": [
+          "File is digitally signed"
+        ],
+        "observables.file.name": [
+          "setupplatform.exe"
+        ],
+        "observables.file.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "observables.file.md5": [
+          "125ffb691fb56b4645186c88fdc07ce3"
+        ],
+        "observables.file.sha1": [
+          "d974ebb2f912d7bc202d9670ebb373422aae6593"
+        ],
+        "observables.file.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "observables.file.signature.trusted": [
+          true
+        ],
+        "observables.file.signature.issuer": [
+          "Microsoft Windows Production PCA 2011"
+        ],
+        "observables.file.signature.subject": [
+          "Microsoft Windows"
+        ],
+        "observables.registry.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "observables.registry.value": [
+          "USERINIT"
+        ],
+        "registry_set.app.name": [
+          "setupplatform.exe"
+        ],
+        "registry_set.app.path": [
+          "C:\\$WINDOWS.~BT\\Sources"
+        ],
+        "registry_set.app.sha256": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed"
+        ],
+        "registry_set.app.original_file_name": [
+          "SETUPPLATFORM.EXE"
+        ],
+        "registry_set.app.original_file_version": [
+          "10.0.26100.6713 (WinBuild.160101.0800)"
+        ],
+        "registry_set.app.original_vendor_name": [
+          "Microsoft Corporation"
+        ],
+        "registry_set.key": [
+          "\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+        ],
+        "registry_set.value": [
+          "USERINIT"
+        ],
+        "registry_set.data_txt": [
+          "C:\\Windows\\system32\\userinit.exe,C:\\CaptureService\\Screen Capture Module\\wcapwlistener.exe"
+        ],
+        "registry_set.user.domain": [
+          "NT AUTHORITY"
+        ],
+        "registry_set.user.name": [
+          "SYSTEM"
+        ],
+        "normalized.observables.all": [
+          "8764355dc31a9ccba1fbf8b6cbc39d8f3053edd8fe54fc15d7c2f31aae9373ed",
+          "setupplatform.exe",
+          "c:\\$windows.~bt\\sources",
+          "c:/$windows.~bt/sources",
+          "\\machine\\software\\microsoft\\windows nt\\currentversion\\winlogon",
+          "userinit",
+          "winlogon userinit registry key modification"
+        ],
+        "normalized.severity_id": 3,
+        "normalized.name": "winlogon userinit registry key modification"
+      }
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "version": "v1",
+  "purpose": "Map natural-language user terms to event metadata field names for exact-match search over event metadata records.",
+  "aliases": {
+    "qradar.starttime": [
+      "start time",
+      "event time",
+      "timestamp",
+      "qradar time",
+      "when did it happen",
+      "time of the event"
+    ],
+    "qradar.sourceip": [
+      "source ip",
+      "source address",
+      "src ip",
+      "src address",
+      "source",
+      "origin ip",
+      "origin address",
+      "attacker ip",
+      "client ip",
+      "where did it come from"
+    ],
+    "qradar.destinationip": [
+      "destination ip",
+      "destination address",
+      "dst ip",
+      "dst address",
+      "target ip",
+      "target address",
+      "victim ip",
+      "server ip",
+      "where did it go"
+    ],
+    "qradar.logsourceid": [
+      "log source id",
+      "logsource id",
+      "qradar log source",
+      "log source"
+    ],
+    "qradar.qid": [
+      "qid",
+      "qradar id",
+      "event qid",
+      "qradar event id"
+    ],
+    "qradar.category": [
+      "category",
+      "qradar category",
+      "event category"
+    ],
+    "qradar.magnitude": [
+      "magnitude",
+      "qradar magnitude",
+      "event magnitude"
+    ],
+    "qradar.username": [
+      "username",
+      "user name",
+      "user",
+      "account",
+      "account name"
+    ],
+    "cisco.date": [
+      "cisco date",
+      "amp date",
+      "secure endpoint date",
+      "detection date",
+      "event date"
+    ],
+    "cisco.event_type": [
+      "event type",
+      "cisco event type",
+      "amp event type",
+      "secure endpoint event type",
+      "alert type"
+    ],
+    "cisco.event_type_id": [
+      "event type id",
+      "cisco event type id",
+      "amp event type id"
+    ],
+    "cisco.detection": [
+      "detection",
+      "detection name",
+      "alert name",
+      "threat name",
+      "what was detected"
+    ],
+    "cisco.severity": [
+      "severity",
+      "alert severity",
+      "cisco severity",
+      "amp severity",
+      "secure endpoint severity"
+    ],
+    "cisco.connector_guid": [
+      "connector guid",
+      "connector id",
+      "agent guid",
+      "agent id",
+      "cisco connector"
+    ],
+    "cisco.group_guids": [
+      "group guid",
+      "group guids",
+      "group id",
+      "computer group",
+      "endpoint group"
+    ],
+    "cisco.tactics": [
+      "tactic",
+      "tactics",
+      "mitre tactic",
+      "mitre tactics",
+      "attack tactic",
+      "detected tactic",
+      "tactic detected",
+      "what tactic was detected"
+    ],
+    "cisco.techniques": [
+      "technique",
+      "techniques",
+      "mitre technique",
+      "mitre techniques",
+      "attack technique",
+      "attack id"
+    ],
+    "computer.hostname": [
+      "hostname",
+      "host name",
+      "computer name",
+      "device name",
+      "endpoint name",
+      "machine name",
+      "host",
+      "computer",
+      "endpoint",
+      "machine",
+      "which computer",
+      "which endpoint"
+    ],
+    "computer.external_ip": [
+      "external ip",
+      "public ip",
+      "internet ip",
+      "external address",
+      "public address"
+    ],
+    "computer.network_ips": [
+      "network ip",
+      "network ips",
+      "internal ip",
+      "local ip",
+      "private ip",
+      "endpoint ip",
+      "computer ip",
+      "machine ip",
+      "host ip"
+    ],
+    "computer.network_macs": [
+      "mac",
+      "mac address",
+      "network mac",
+      "adapter mac",
+      "endpoint mac"
+    ],
+    "computer.os.name": [
+      "os",
+      "operating system",
+      "os name",
+      "windows",
+      "platform"
+    ],
+    "computer.os.version": [
+      "os version",
+      "operating system version",
+      "windows version"
+    ],
+    "computer.os.build": [
+      "os build",
+      "windows build",
+      "build number"
+    ],
+    "computer.hw_info.vendor_name": [
+      "hardware vendor",
+      "device vendor",
+      "computer vendor",
+      "manufacturer",
+      "vendor name"
+    ],
+    "computer.hw_info.serial_number": [
+      "serial number",
+      "device serial",
+      "computer serial",
+      "asset serial"
+    ],
+    "actions.action": [
+      "action",
+      "actions",
+      "response action",
+      "remediation action",
+      "what action was taken"
+    ],
+    "actions.name": [
+      "process name",
+      "action process",
+      "file name in action",
+      "executed process",
+      "process"
+    ],
+    "actions.path": [
+      "process path",
+      "action path",
+      "file path in action",
+      "executable path"
+    ],
+    "actions.cmd_line": [
+      "command line",
+      "cmd line",
+      "cmdline",
+      "process command line",
+      "execution command",
+      "command"
+    ],
+    "actions.sha256": [
+      "action sha256",
+      "process sha256",
+      "executed file hash",
+      "action hash"
+    ],
+    "actions.pid": [
+      "pid",
+      "process id",
+      "action pid"
+    ],
+    "actions.ppid": [
+      "ppid",
+      "parent pid",
+      "parent process id"
+    ],
+    "actions.status": [
+      "action status",
+      "remediation status",
+      "status"
+    ],
+    "actions.error": [
+      "action error",
+      "remediation error",
+      "error message",
+      "error"
+    ],
+    "observables.file.name": [
+      "file name",
+      "observable file name",
+      "detected file",
+      "file",
+      "malicious file"
+    ],
+    "observables.file.path": [
+      "file path",
+      "observable file path",
+      "detected file path",
+      "malicious file path"
+    ],
+    "observables.file.md5": [
+      "md5",
+      "file md5",
+      "md5 hash"
+    ],
+    "observables.file.sha1": [
+      "sha1",
+      "file sha1",
+      "sha1 hash"
+    ],
+    "observables.file.sha256": [
+      "sha256",
+      "file sha256",
+      "sha256 hash",
+      "file hash",
+      "hash",
+      "malware hash",
+      "indicator hash"
+    ],
+    "observables.file.signature.trusted": [
+      "signature trusted",
+      "trusted signature",
+      "signed file trusted",
+      "is the file trusted",
+      "is file signed"
+    ],
+    "observables.file.signature.issuer": [
+      "signature issuer",
+      "certificate issuer",
+      "signing issuer",
+      "signed by issuer"
+    ],
+    "observables.file.signature.subject": [
+      "signature subject",
+      "certificate subject",
+      "signer",
+      "signed by",
+      "publisher"
+    ],
+    "observables.registry.key": [
+      "registry key",
+      "observable registry key",
+      "reg key",
+      "windows registry key"
+    ],
+    "observables.registry.value": [
+      "registry value",
+      "observable registry value",
+      "reg value",
+      "windows registry value"
+    ],
+    "registry_set.app.name": [
+      "registry app name",
+      "registry process name",
+      "app name",
+      "application name"
+    ],
+    "registry_set.app.path": [
+      "registry app path",
+      "registry process path",
+      "app path",
+      "application path"
+    ],
+    "registry_set.app.sha256": [
+      "registry app sha256",
+      "registry process sha256",
+      "registry app hash",
+      "application hash"
+    ],
+    "registry_set.app.original_file_name": [
+      "original file name",
+      "registry original file name",
+      "application original file name"
+    ],
+    "registry_set.app.original_file_version": [
+      "original file version",
+      "file version",
+      "registry file version",
+      "application version"
+    ],
+    "registry_set.app.original_vendor_name": [
+      "original vendor name",
+      "original vendor",
+      "file vendor",
+      "application vendor"
+    ],
+    "registry_set.key": [
+      "modified registry key",
+      "registry set key",
+      "changed registry key",
+      "registry modification key"
+    ],
+    "registry_set.value": [
+      "modified registry value",
+      "registry set value",
+      "changed registry value",
+      "registry modification value"
+    ],
+    "registry_set.data_txt": [
+      "registry data",
+      "registry data text",
+      "registry set data",
+      "registry value data",
+      "data txt"
+    ],
+    "registry_set.user.domain": [
+      "registry user domain",
+      "user domain",
+      "domain"
+    ],
+    "registry_set.user.name": [
+      "registry user name",
+      "registry user",
+      "user that changed registry",
+      "registry account"
+    ],
+    "normalized.observables.all": [
+      "all observables",
+      "normalized observables",
+      "indicators",
+      "iocs",
+      "observable values",
+      "all indicators"
+    ],
+    "normalized.severity_id": [
+      "severity id",
+      "normalized severity",
+      "normalized severity id"
+    ],
+    "normalized.name": [
+      "normalized name",
+      "normalized detection name",
+      "normalized alert name"
+    ]
+  }
+}
